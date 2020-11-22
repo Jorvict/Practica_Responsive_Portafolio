@@ -1,3 +1,8 @@
+html{
+    /* box-sizing: border-box; */
+    /* font-size: 62.5%; */
+}
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
@@ -44,6 +49,7 @@ h2{
 
     color:white;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     height: 120px;
     align-items: center;
@@ -58,7 +64,10 @@ h2{
 }
 
 .container{
-    width: 1200px;
+    /* width: 1200px; */
+    max-width: 1000px;
+    /* width: 100%; */
+    flex: 1; /* Usa todo el ancho disponible dentro del elemento*/
     margin: 0 auto;
     display: inherit;
     justify-content: inherit;
@@ -97,6 +106,7 @@ h2{
 .hero{
     height: 500px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 
@@ -119,6 +129,7 @@ h2{
     border: 1px solid gray;
     border-radius: 10px;
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 15px;
 
     padding: 20px;
@@ -221,6 +232,7 @@ h2{
     color: white;
     height: 200px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
@@ -283,6 +295,7 @@ h2{
     
     color: white;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
 }
@@ -293,4 +306,54 @@ h2{
 
 .footer a{
     color: white;
+}
+
+/* Desktop first empieza desde el Media Querie más grande */
+
+@media screen and (max-width:1024px){
+    body{
+        /* border: 10px solid green; */
+        
+    }
+}
+
+@media screen and (max-width:767px){ /*Resoluciones mas bajas del ipad ejecutaran este media querie, es decir los ipads se verá relativamente como el de escritorio */
+    .header{
+        display: block;
+        height: auto;
+    }
+    .header ol{
+        display: block;
+    }
+    .header ol li{
+        height: 50px;
+    }
+    .header a{
+        justify-content: center;
+    }
+    .header .logo{
+        text-align: center;
+    }
+
+    .container{
+        max-width: 767px;
+    }
+}
+
+@media screen and (max-width:480px){
+    body{
+        /* border: 10px solid green; */
+        
+    }
+    .container{
+        max-width: 480px;
+    }
+
+}
+
+@media screen and (max-width:320px){
+    body{
+        /* border: 10px solid green; */
+        
+    }
 }
