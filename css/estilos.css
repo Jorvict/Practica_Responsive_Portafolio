@@ -116,9 +116,15 @@ h2{
 
 }
 
-.hero img{
-    object-fit: contain;
+.hero h1{
+    display: inline-block;
+    width: 50%;
 }
+
+.hero-image{
+    width: 50%;
+}
+
 
 .portfolio{
     background-color: #fafafa;
@@ -319,6 +325,34 @@ h2{
     .container{
         padding: 0 1em;
     }
+
+    .hero{
+        height: auto;
+        position: relative;
+        overflow: hidden;
+        padding: 2em;
+    }
+    .hero h1{
+        width: 100%;
+    }
+    
+    .hero-image{
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        object-fit: cover;
+        object-position: 50% 210%;
+        /* filter: opacity(80%) blur(1px); */
+    }
+    h1{
+        font-size: 2em;
+        z-index: 2;
+    }
+
     body{
         /* border: 10px solid green; */
         
@@ -326,6 +360,7 @@ h2{
 }
 
 @media screen and (max-width:767px){ /*Resoluciones mas bajas del ipad ejecutaran este media querie, es decir los ipads se verá relativamente como el de escritorio */
+
     .header{
         display: block;
         height: auto;
@@ -341,6 +376,10 @@ h2{
     }
     .header .logo{
         text-align: center;
+    }
+
+    .hero-image{
+        /* object-position: 50% 110%; */
     }
 
     .project{
@@ -401,6 +440,10 @@ h2{
 
 @media screen and (max-width:480px){
 
+    .hero{
+        font-size: .8em;
+    }
+
     .project-details{
         font-size: 12px;
     }
@@ -431,6 +474,13 @@ h2{
 }
 
 @media screen and (max-width:320px){
+
+    h1{
+        font-size: 1.2em;
+    }
+    .hero{
+        padding: 2em 1em;
+    }
     body{
         /* border: 10px solid green; */
         
