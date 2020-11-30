@@ -9,6 +9,49 @@ body {
     /* padding-top: 120px; quitar despues xd */
 }
 
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?apkmoh');
+    src:  url('../fonts/icomoon.eot?apkmoh#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?apkmoh') format('truetype'),
+      url('../fonts/icomoon.woff?apkmoh') format('woff'),
+      url('../fonts/icomoon.svg?apkmoh#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-instagram:before {
+    content: "\e900";
+  }
+  .icon-facebook:before {
+    content: "\e901";
+  }
+  .icon-github:before {
+    content: "\e902";
+  }
+  .icon-twitter:before {
+    content: "\e903";
+  }
+  .icon-menu:before {
+    content: "\e904";
+  }
+
 ol, ul {
     margin: 0;
     padding: 0;
@@ -206,6 +249,30 @@ h2{
     background-color: #f4fbff;
 }
 
+.html-video{
+    width: 100%;
+    height: auto;
+    /* max-width: 100%; */
+}
+.flexible-video{
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+    background: blue;
+    position: relative;
+}
+
+.youtube-video{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* z-index: 3; */
+    width: 100%;
+    height: 100%;
+}
+
 .event img{
     width: 480px;
     height: 200px;
@@ -252,7 +319,7 @@ h2{
     border-radius: 5px;
     border-style: solid;
     padding: 10px 20px 10px 25px;
-    background-image: url('https://i.imgur.com/017QXSj.png');
+    background-image: url('../images/correo.png');
     background-repeat: no-repeat;
     background-size: 15px 15px;
     background-position-y: center;
@@ -271,10 +338,16 @@ h2{
     cursor: pointer;
 }
 
+.social{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
 .social-link{
     display: inline-block;
     width: 50px;
-    height: 50px;
+    height: 45px;
     background-size: 50px 50px;
     margin: 0px 10px;
 }
@@ -284,19 +357,31 @@ h2{
 }
 
 .social-link.twitter{
-    background-image: url('https://i.imgur.com/E7orQyF.png');
+    /* background-image: url('../images/twitter.svg'); */
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
 }
 
 .social-link.facebook{
-    background-image: url('https://i.imgur.com/mRQcYGt.png');
+    /* background-image: url('../images/facebook.svg'); */
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
 }
 
 .social-link.github{
-    background-image: url('https://i.imgur.com/4PARSVq.png');
+    /* background-image: url('../images/github.svg'); */
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
 }
 
 .social-link.instagram{
-    background-image: url('https://i.imgur.com/5DPx99e.png');
+    /* background-image: url('../images/instagram.svg'); */
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
 }
 
 .footer{
@@ -315,6 +400,24 @@ h2{
 }
 
 .footer a{
+    color: white;
+}
+
+.burger-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /*Calcula el porcentaje en base al width, en este caso serían 20px */
+    background-color: rgba(37, 168, 135, .8); /*rgba(rojo, verde, azul, opacidad) */
+    display: none;
+    /*display: flex;
+    align-items: center;
+    justify-content: center; */
+    line-height: 40px; /* Centrado Vertical, el line height debe ser igual al height*/
+    text-align: center; /* Centrado Horizontal */
+    position: fixed;
+    z-index: 4;
+    left: 5px;
+    top: 5px;
     color: white;
 }
 
@@ -353,29 +456,7 @@ h2{
         z-index: 2;
     }
 
-    .html-video{
-        width: 100%;
-        height: auto;
-        /* max-width: 100%; */
-    }
-    .flexible-video{
-        width: 100%;
-        height: 0;
-        padding-top: 56.25%;
-        background: blue;
-        position: relative;
-    }
 
-    .youtube-video{
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        /* z-index: 3; */
-        width: 100%;
-        height: 100%;
-    }
     
 
     body{
@@ -386,6 +467,10 @@ h2{
 
 @media screen and (max-width:767px){ /*Resoluciones mas bajas del ipad ejecutaran este media querie, es decir los ipads se verá relativamente como el de escritorio */
 
+    .burger-button{
+        display: block;
+    }
+    
     .header{
         display: block;
         height: auto;
